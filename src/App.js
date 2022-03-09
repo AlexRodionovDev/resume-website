@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import {AboutMe} from './components/AboutMe';
+import {Skills} from './components/Skills';
+import {Contacts} from './components/Сontacts';
+import data from './data/data.json';
+import { Routes, Route, Link } from 'react-router-dom';
+
+const myData = data;
 
 function App() {
+  console.log(myData.devSkills)
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={
+          <AboutMe
+          contactsData = {myData.contacts}
+          purpose = {myData.purpose}
+          aboutMe = {myData.aboutMe}
+        />}
+        />
+        <Route path='/skills' element={
+          <Skills
+          devSkills = {myData.devSkills}
+          education = {myData.education}
+          addEducation = {myData.addEducation}
+          job = {myData.job}
+          />
+        }/>
+        <Route path='/contacts' element={
+          <Contacts
+          contactsData = {myData.contacts} />
+        }/>
+      </Routes>
     </div>
   );
 }
