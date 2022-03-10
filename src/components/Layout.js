@@ -1,14 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {AppBar, Toolbar, Typography, Link, Paper, Grid} from '@material-ui/core';
+import {AppBar, Toolbar, Typography, Link} from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import FacebookIcon from '@material-ui/icons/Facebook';
-// import Vk from '../images/vk.svg';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { SvgIcon } from '@material-ui/core';
-import { ReactComponent as Vk } from '../images/vk.svg';
+
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -57,7 +55,7 @@ export default function Layout({ children}) {
           <Link component={RouterLink} className={classes.link} to = '/skills'>Навыки</Link>
         </Typography>
         <Typography className={classes.button} variant="h6" color="primary">
-          <Link component={RouterLink} className={classes.link} to = '/contacts'>   Контакты</Link>
+          <Link component={RouterLink} className={classes.link} to = '/contacts'>Контакты</Link>
         </Typography>
       </Toolbar>
     </AppBar>
@@ -68,9 +66,9 @@ export default function Layout({ children}) {
       showLabels
       className={classes.bottomNavigation}
     >
-      <BottomNavigationAction href='https://www.facebook.com/rybiroid' target='_blank' label="facebook" icon={<FacebookIcon className={classes.contactsIcon}  color="primary" style={{ fontSize: 25 }}/>} />
-      <BottomNavigationAction href='https://vk.com/id6299473' target='_blank' label="ВКонтакте" icon={<SvgIcon component={Vk}  className={classes.contactsIcon}  viewBox="0 0 48 48" style={{fontSize: 25}}/>} />
-      <BottomNavigationAction href='https://www.instagram.com/alex.rodionov.dev/' target='_blank' label="instagram" icon={<InstagramIcon className={classes.contactsIcon}  color="primary" style={{ fontSize: 25 }}/>}/>
+      <BottomNavigationAction href='https://www.facebook.com/rybiroid' target='_blank' label="facebook" icon={<FacebookIcon className={classes.contactsIcon}  color="primary" style={{ fontSize: '1.6rem' }}/>} />
+      <BottomNavigationAction href='https://vk.com/id6299473' target='_blank' label="ВКонтакте" icon={<img className={classes.contactsIcon} src='/images/vk.svg' style={{ width: '1.6rem' }}/>} />
+      <BottomNavigationAction href='https://www.instagram.com/alex.rodionov.dev/' target='_blank' label="instagram" icon={<InstagramIcon className={classes.contactsIcon}  color="primary" style={{ fontSize: '1.6rem' }}/>}/>
     </BottomNavigation>
     </>
   )

@@ -1,13 +1,12 @@
-import {AboutMe} from './components/AboutMe';
-import {Skills} from './components/Skills';
-import {Contacts} from './components/Сontacts';
+import {AboutMe} from './pages/AboutMe';
+import {Skills} from './pages/Skills';
+import {Contacts} from './pages/Сontacts';
 import data from './data/data.json';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 
 const myData = data;
 
 function App() {
-  console.log(myData.devSkills)
   
   return (
     <div className="App">
@@ -20,11 +19,11 @@ function App() {
         />}
         />
         <Route path='/skills' element={
-          <Skills
-          devSkills = {myData.devSkills}
-          education = {myData.education}
-          addEducation = {myData.addEducation}
-          job = {myData.job}
+            <Skills
+            devSkills = {myData.devSkills}
+            education = {myData.education}
+            addEducation = {myData.addEducation}
+            job = {myData.job}
           />
         }/>
         <Route path='/contacts' element={
